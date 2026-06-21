@@ -1,4 +1,10 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+function resolveApiUrl() {
+  const raw = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  const trimmed = String(raw).trim().replace(/\/$/, "");
+  return trimmed.endsWith("/api") ? trimmed : `${trimmed}/api`;
+}
+
+const API_URL = resolveApiUrl();
 
 const getToken = () => localStorage.getItem("ustaad_token");
 
@@ -20,7 +26,11 @@ async function request(path, options = {}) {
   const data = await res.json().catch(() => ({}));
 
   if (!res.ok) {
-    throw new Error(data.message || "Request failed");
+    const fallback =
+      res.status === 404
+        ? "API route not found. Check VITE_API_URL ends with /api on Render."
+        : "Request failed";
+    throw new Error(data.message || fallback);
   }
   return data;
 }

@@ -1,12 +1,21 @@
 import { execSync } from "child_process";
 
-const backend =
-  process.env.BACKEND_URL ||
-  process.env.VITE_API_URL?.replace(/\/api\/?$/, "") ||
-  "http://localhost:5000";
+function resolveBackendUrl() {
+  const fromBackend = process.env.BACKEND_URL?.trim();
+  if (fromBackend) {
+    return fromBackend.replace(/\/$/, "").replace(/\/api\/?$/, "");
+  }
 
-const apiUrl = `${backend.replace(/\/$/, "")}/api`;
+  const fromVite = process.env.VITE_API_URL?.trim();
+  if (fromVite) {
+    return fromVite.replace(/\/$/, "").replace(/\/api\/?$/, "");
+  }
 
+  return "http://localhost:5000";
+}
+
+const backend = resolveBackendUrl();
+const apiUrl = `${backend}/api`;
 console.log("Building frontend with API:", apiUrl);
 
 execSync("npx vite build", {

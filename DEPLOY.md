@@ -82,6 +82,38 @@ Test signup flow on the live frontend. OTP appears in backend **Logs** on Render
 
 ---
 
+## Manual deploy (UstaadTeacher on Render)
+
+If you created services manually (not Blueprint):
+
+### Backend — Web Service (`UstaadTeacher`)
+- **Root Directory:** `ustaad-backend`
+- **Build:** `npm install`
+- **Start:** `npm start`
+- **Health check:** `/api/health`
+
+| Variable | Value |
+|----------|-------|
+| `MONGODB_URI` | Your MongoDB Atlas connection string |
+| `JWT_SECRET` | Long random string |
+| `NODE_ENV` | `production` |
+| `CLIENT_URL` | `https://ustaadteacher-1.onrender.com` |
+
+### Frontend — Static Site (`UstaadTeacher-1`)
+- **Root Directory:** `ustaad-frontend`
+- **Build:** `npm install && npm run build:render`
+- **Publish:** `dist`
+
+| Variable | Value |
+|----------|-------|
+| `BACKEND_URL` | `https://ustaadteacher.onrender.com` |
+
+Do **not** set `VITE_API_URL` alone without `/api` — use `BACKEND_URL` and `build:render` instead.
+
+After changing env vars, click **Manual Deploy** on both services.
+
+---
+
 ## Manual deploy (without Blueprint)
 
 ### Backend — Web Service
