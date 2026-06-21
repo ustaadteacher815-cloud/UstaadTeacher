@@ -24,10 +24,26 @@ const allowedOrigins = [
   "http://localhost:4173",
 ].filter(Boolean);
 
+function isAllowedOrigin(origin) {
+  if (!origin) return true;
+  if (allowedOrigins.includes(origin)) return true;
+
+  if (process.env.NODE_ENV === "production") {
+    try {
+      const { hostname } = new URL(origin);
+      if (hostname.endsWith(".onrender.com")) return true;
+    } catch {
+      return false;
+    }
+  }
+
+  return false;
+}
+
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (isAllowedOrigin(origin)) {
         callback(null, true);
       } else {
         callback(new Error(`CORS blocked: ${origin}`));
