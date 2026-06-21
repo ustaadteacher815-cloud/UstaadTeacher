@@ -102,8 +102,12 @@ function Auth({ mode = "signup" }) {
       </div>
 
       {error && <Alert variant="danger">{error}</Alert>}
-      {devOtp && (
-        <Alert variant="info">Dev OTP: <strong>{devOtp}</strong></Alert>
+      {devOtp && step === "otp" && (
+        <Alert variant="success" className="text-center mb-3">
+          <div className="fw-bold">Your OTP</div>
+          <div style={{ fontSize: "1.75rem", letterSpacing: "0.35em" }}>{devOtp}</div>
+          <small className="text-muted">Enter this code below to continue</small>
+        </Alert>
       )}
 
       {step === "phone" ? (
@@ -138,7 +142,7 @@ function Auth({ mode = "signup" }) {
           <Button type="submit" className="ustaad-btn-primary w-100 mb-2" disabled={loading}>
             {loading ? "VERIFYING..." : "VERIFY & CONTINUE"}
           </Button>
-          <Button variant="link" className="w-100" onClick={() => setStep("phone")}>
+          <Button variant="link" className="w-100" onClick={() => { setStep("phone"); setDevOtp(""); setOtp(""); }}>
             Change number
           </Button>
         </Form>

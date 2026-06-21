@@ -8,6 +8,13 @@ const router = express.Router();
 const signToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "30d" });
 
+function shouldReturnDevOtp() {
+  if (process.env.SHOW_DEV_OTP === "false") return false;
+  if (process.env.NODE_ENV !== "production") return true;
+  // No SMS gateway yet — expose OTP in API until SHOW_DEV_OTP=false.
+  return true;
+}
+
 router.post("/send-otp", async (req, res) => {
   try {
     const { phone } = req.body;
@@ -31,7 +38,7 @@ router.post("/send-otp", async (req, res) => {
 
     res.json({
       message: "OTP sent successfully",
-      devOtp: process.env.NODE_ENV !== "production" ? otp : undefined,
+      devOtp: shouldReturnDevOtp() ? otp : undefined,
     });
   } catch (error) {
     res.status(500).json({ message: error.message });
