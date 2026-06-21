@@ -1,0 +1,25 @@
+.feature-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.feature-card-link:hover {
+  color: inherit;
+}
+
+.feature-card {
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.feature-card-link:hover .feature-card {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  border-color: #58cc02;
+}
+
+.feature-card-link:hover .card-title {
+  color: #58cc02;
+}

@@ -1,0 +1,24 @@
+.site-footer {
+  background-color: #58cc02;
+  color: white;
+  padding: 60px 0;
+}
+
+.footer-col {
+  margin-bottom: 24px;
+}
+
+.footer-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  opacity: 0.9;
+  transition: opacity 0.15s;
+}
+
+.footer-link:hover {
+  color: white;
+  opacity: 1;
+  text-decoration: underline;
+}

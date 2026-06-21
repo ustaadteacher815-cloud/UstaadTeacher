@@ -1,0 +1,337 @@
+.hero-section {
+  background: #f7f7f7;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-row {
+  min-height: 90vh;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #4b4b4b;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.hero-btn-primary {
+  width: 330px;
+  height: 60px;
+  background: #58cc02 !important;
+  border: none !important;
+  border-radius: 16px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.hero-btn-primary:hover {
+  background: #46a302 !important;
+}
+
+.hero-btn-secondary {
+  width: 330px;
+  height: 60px;
+  background: white !important;
+  color: #1cb0f6 !important;
+  border: 2px solid #e5e5e5 !important;
+  border-radius: 16px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+/* Hero visual scene */
+.hero-visual {
+  position: relative;
+  width: min(420px, 100%);
+  height: 420px;
+  margin: 0 auto;
+}
+
+.hero-mascot-wrapper {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  animation: mascot-float 3.5s ease-in-out infinite;
+}
+
+.hero-bird-glow {
+  position: absolute;
+  inset: -24px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(88, 204, 2, 0.35) 0%,
+    rgba(88, 204, 2, 0.08) 55%,
+    transparent 72%
+  );
+  animation: glow-pulse 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero-mascot {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 16px 32px rgba(88, 204, 2, 0.25));
+  animation: mascot-bob 2.8s ease-in-out infinite;
+}
+
+.mascot-wing-left {
+  transform-origin: 110px 175px;
+  animation: wing-flap-left 2.4s ease-in-out infinite;
+}
+
+.mascot-wing-right {
+  transform-origin: 210px 175px;
+  animation: wing-flap-right 2.4s ease-in-out infinite;
+}
+
+.hero-orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px dashed rgba(88, 204, 2, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-orbit-ring-1 {
+  width: 340px;
+  height: 340px;
+  animation: ring-spin 24s linear infinite;
+}
+
+.hero-orbit-ring-2 {
+  width: 390px;
+  height: 390px;
+  border-color: rgba(28, 176, 246, 0.12);
+  animation: ring-spin-reverse 32s linear infinite;
+}
+
+.hero-float {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  z-index: 2;
+}
+
+.hero-float svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.12));
+}
+
+.hero-float-1 {
+  top: 8%;
+  left: 12%;
+  animation: float-drift-1 4.2s ease-in-out infinite;
+}
+
+.hero-float-2 {
+  top: 18%;
+  right: 8%;
+  animation: float-drift-2 3.8s ease-in-out infinite;
+}
+
+.hero-float-3 {
+  bottom: 22%;
+  left: 4%;
+  animation: float-drift-3 4.6s ease-in-out infinite;
+}
+
+.hero-float-4 {
+  bottom: 12%;
+  right: 14%;
+  animation: float-drift-4 3.5s ease-in-out infinite;
+}
+
+.hero-float-5 {
+  top: 42%;
+  left: 0;
+  animation: float-drift-5 5s ease-in-out infinite;
+}
+
+.hero-float-6 {
+  top: 38%;
+  right: 0;
+  animation: float-drift-6 4.4s ease-in-out infinite;
+}
+
+@keyframes mascot-float {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-18px);
+  }
+}
+
+@keyframes mascot-bob {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.02) rotate(-1.5deg);
+  }
+  75% {
+    transform: scale(1.02) rotate(1.5deg);
+  }
+}
+
+@keyframes wing-flap-left {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes wing-flap-right {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes ring-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes ring-spin-reverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes float-drift-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(8px, -14px) rotate(6deg);
+  }
+}
+
+@keyframes float-drift-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-10px, -10px) rotate(-8deg);
+  }
+}
+
+@keyframes float-drift-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(12px, -8px) rotate(10deg);
+  }
+}
+
+@keyframes float-drift-4 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-8px, -16px) rotate(-6deg);
+  }
+}
+
+@keyframes float-drift-5 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(6px, -12px) scale(1.08);
+  }
+}
+
+@keyframes float-drift-6 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-6px, -10px) scale(1.06);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 2.5rem;
+    margin-top: 24px;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-visual {
+    height: 360px;
+  }
+
+  .hero-mascot-wrapper {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-mascot-wrapper,
+  .hero-mascot,
+  .hero-bird-glow,
+  .mascot-wing-left,
+  .mascot-wing-right,
+  .hero-orbit-ring,
+  .hero-float {
+    animation: none;
+  }
+}

@@ -1,0 +1,41 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+# Deploy: connect this repo on Render → New → Blueprint
+# Required: set MONGODB_URI in dashboard (MongoDB Atlas connection string)
+
+services:
+  - type: web
+    name: ustaad-backend
+    runtime: node
+    rootDir: ustaad-backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        fromService:
+          type: web
+          name: ustaad-frontend
+          envVarKey: RENDER_EXTERNAL_URL
+
+  - type: web
+    name: ustaad-frontend
+    runtime: static
+    rootDir: ustaad-frontend
+    buildCommand: npm install && npm run build:render
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: BACKEND_URL
+        fromService:
+          type: web
+          name: ustaad-backend
+          envVarKey: RENDER_EXTERNAL_URL

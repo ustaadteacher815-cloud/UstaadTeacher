@@ -1,0 +1,13 @@
+{
+  "name": "ustaad-teacher",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Ustaad MERN learning platform",
+  "scripts": {
+    "install:all": "npm install --prefix ustaad-backend && npm install --prefix ustaad-frontend",
+    "dev:backend": "npm run dev --prefix ustaad-backend",
+    "dev:frontend": "npm run dev --prefix ustaad-frontend",
+    "seed": "npm run seed --prefix ustaad-backend",
+    "build": "npm run build --prefix ustaad-frontend"
+  }
+}

@@ -1,0 +1,729 @@
+:root {
+  --ustaad-green: #58cc02;
+  --ustaad-green-dark: #46a302;
+  --ustaad-blue: #1cb0f6;
+  --ustaad-text: #4b4b4b;
+  --ustaad-muted: #777;
+  --ustaad-bg: #f7f7f7;
+  --ustaad-card-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ustaad-page {
+  min-height: 100vh;
+  background: var(--ustaad-bg);
+}
+
+.ustaad-page-centered {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.ustaad-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--ustaad-card-shadow);
+}
+
+.ustaad-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--ustaad-text);
+  margin-bottom: 8px;
+}
+
+.ustaad-subtitle {
+  color: var(--ustaad-muted);
+  margin-bottom: 28px;
+}
+
+.ustaad-btn-primary {
+  height: 56px;
+  background: var(--ustaad-green) !important;
+  border: none !important;
+  border-radius: 16px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 0 var(--ustaad-green-dark);
+}
+
+.ustaad-btn-primary:hover {
+  background: var(--ustaad-green-dark) !important;
+}
+
+.ustaad-btn-secondary {
+  height: 56px;
+  background: white !important;
+  color: var(--ustaad-blue) !important;
+  border: 2px solid #e5e5e5 !important;
+  border-radius: 16px !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.ustaad-btn-outline {
+  height: 48px;
+  background: white !important;
+  color: var(--ustaad-text) !important;
+  border: 2px solid #e5e5e5 !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+}
+
+.ustaad-link {
+  color: var(--ustaad-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ustaad-link:hover {
+  text-decoration: underline;
+}
+
+.ustaad-badge {
+  display: inline-block;
+  background: #e8f9d0;
+  color: var(--ustaad-green-dark);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.ustaad-stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--ustaad-card-shadow);
+  height: 100%;
+}
+
+.ustaad-stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ustaad-green);
+}
+
+.ustaad-feature-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--ustaad-card-shadow);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.ustaad-feature-card.grid-card {
+  height: 100%;
+}
+
+.ustaad-list-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px 20px;
+  box-shadow: var(--ustaad-card-shadow);
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.ustaad-list-card:hover {
+  color: inherit;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ustaad-list-card .ustaad-progress {
+  margin-bottom: 0;
+}
+
+.page-intro {
+  background: white;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: var(--ustaad-card-shadow);
+  margin-bottom: 24px;
+}
+
+.page-intro p {
+  color: var(--ustaad-muted);
+  margin-bottom: 0;
+  line-height: 1.7;
+}
+
+.ustaad-feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  color: inherit;
+}
+
+.ustaad-feature-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.ustaad-progress {
+  height: 10px;
+  border-radius: 10px;
+  background: #e5e5e5;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.ustaad-progress-bar {
+  height: 100%;
+  background: var(--ustaad-green);
+  border-radius: 10px;
+  transition: width 0.3s;
+}
+
+.ustaad-option {
+  border: 2px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.ustaad-option:hover {
+  border-color: var(--ustaad-green);
+}
+
+.ustaad-option.selected {
+  border-color: var(--ustaad-green);
+  background: #f0fce4;
+}
+
+.ustaad-option-static {
+  cursor: default;
+  background: #fafafa;
+}
+
+.ustaad-option-static:hover {
+  border-color: #e5e5e5;
+}
+
+.chapter-study-extras {
+  margin-bottom: 8px;
+}
+
+.lesson-extra-panel {
+  background: #f8faf5;
+  border: 2px solid rgba(88, 204, 2, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+  margin: -4px 0 12px;
+}
+
+.lesson-extra-card {
+  display: flex;
+  gap: 14px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+}
+
+.lesson-extra-card:last-child {
+  margin-bottom: 0;
+}
+
+.lesson-extra-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.lesson-formula-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  border-left: 4px solid var(--ustaad-green);
+}
+
+.lesson-formula-eq {
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+  margin: 6px 0;
+  color: #1a1a1a;
+}
+
+.lesson-notes-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ustaad-muted);
+  font-size: 0.92rem;
+}
+
+.lesson-notes-list li {
+  margin-bottom: 6px;
+}
+
+.ustaad-app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.ustaad-sidebar {
+  width: 360px;
+  background: white;
+  border-right: 1px solid #e5e5e5;
+  padding: 28px 22px 32px;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.ustaad-sidebar-brand {
+  color: var(--ustaad-green);
+  font-weight: 800;
+  font-size: 1.75rem;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+  padding: 0 14px;
+}
+
+.ustaad-sidebar-user {
+  padding: 0 14px;
+  margin-bottom: 20px;
+  color: var(--ustaad-muted);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ustaad-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ustaad-sidebar-group {
+  margin-bottom: 8px;
+}
+
+.ustaad-sidebar-group-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ustaad-muted);
+  margin: 8px 14px 4px;
+}
+
+.ustaad-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: var(--ustaad-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.ustaad-sidebar-icon {
+  width: 26px;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 1.15rem;
+}
+
+.ustaad-sidebar-link:hover,
+.ustaad-sidebar-link.active {
+  background: #f0fce4;
+  color: var(--ustaad-green-dark);
+}
+
+.ustaad-sidebar-logout {
+  margin-top: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 16px;
+}
+
+.ustaad-main-wrap {
+  margin-left: 360px;
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ustaad-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #e9ecef;
+  backdrop-filter: blur(8px);
+}
+
+.ustaad-topbar-grade {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ustaad-green-dark);
+  background: #f0fce4;
+  padding: 8px 14px;
+  border-radius: 999px;
+}
+
+.ustaad-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.ustaad-topbar-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ustaad-text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ustaad-topbar-pill:hover {
+  border-color: var(--ustaad-green);
+  color: var(--ustaad-green-dark);
+}
+
+.ustaad-profile-menu {
+  position: relative;
+}
+
+.ustaad-profile-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ustaad-profile-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #58cc02, #46a302);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.ustaad-profile-avatar.lg {
+  width: 56px;
+  height: 56px;
+  font-size: 1.35rem;
+}
+
+.ustaad-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 220px;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+}
+
+.ustaad-profile-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 12px;
+  border-bottom: 1px solid #f1f3f5;
+  margin-bottom: 4px;
+}
+
+.ustaad-profile-dropdown-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ustaad-text);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ustaad-profile-dropdown-link:hover {
+  background: #f8f9fa;
+}
+
+.ustaad-profile-dropdown-link.danger {
+  color: #dc3545;
+}
+
+.ustaad-main {
+  flex: 1;
+  padding: 24px 32px 32px;
+  background: var(--ustaad-bg);
+}
+
+.page-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ustaad-blue);
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.page-back-btn:hover {
+  text-decoration: underline;
+  color: var(--ustaad-blue);
+}
+
+.chapter-intro-card {
+  background: #f0fce4;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  border-left: 4px solid var(--ustaad-green);
+}
+
+.chapter-tips-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ustaad-muted);
+}
+
+.chapter-tips-list li {
+  margin-bottom: 6px;
+}
+
+.chapter-ai-tutor {
+  background: #f8faf5;
+  border: 2px solid rgba(88, 204, 2, 0.25);
+  border-radius: 16px;
+  padding: 16px 18px;
+}
+
+.lesson-video-player {
+  margin: 20px 0;
+}
+
+.lesson-video-screen {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 12px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lesson-video-play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(28, 176, 246, 0.95);
+  color: #fff;
+  font-size: 1.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 6px;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.lesson-video-play-btn:hover {
+  transform: scale(1.05);
+  background: #1cb0f6;
+}
+
+.lesson-video-loading {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.lesson-video-script {
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 20px 24px 48px;
+  color: #f0f0f0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.lesson-video-control-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(88, 204, 2, 0.95);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chapter-ai-messages {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.chapter-ai-msg {
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.chapter-ai-msg.user {
+  background: #e8f9d0;
+  margin-left: 24px;
+  text-align: right;
+}
+
+.chapter-ai-msg.ai {
+  background: #fff;
+  margin-right: 24px;
+  border: 1px solid #eee;
+}
+
+.info-section {
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+}
+
+.lounge-chat-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.lounge-chat-messages {
+  min-height: 320px;
+  max-height: 420px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.lounge-chat-row {
+  display: flex;
+  width: 100%;
+}
+
+.lounge-chat-row.sent {
+  justify-content: flex-end;
+}
+
+.lounge-chat-row.received {
+  justify-content: flex-start;
+}
+
+.lounge-chat-bubble {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.lounge-chat-bubble.sent {
+  background: #58cc02;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.lounge-chat-bubble.received {
+  background: #f1f3f5;
+  color: var(--ustaad-text);
+  border: 1px solid #e9ecef;
+  border-bottom-left-radius: 4px;
+}
+
+.lounge-chat-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.72rem;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+
+.lounge-chat-bubble.sent .lounge-chat-meta strong,
+.lounge-chat-bubble.sent .lounge-chat-meta span {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.lounge-chat-bubble.received .lounge-chat-meta span {
+  color: var(--ustaad-muted);
+}
+
+@media (max-width: 768px) {
+  .ustaad-sidebar {
+    display: none;
+  }
+  .ustaad-main-wrap {
+    margin-left: 0;
+  }
+  .ustaad-topbar {
+    padding: 12px 16px;
+  }
+  .ustaad-topbar-pill {
+    display: none;
+  }
+  .ustaad-topbar-pill:last-of-type {
+    display: none;
+  }
+  .ustaad-main {
+    margin-left: 0;
+    padding: 16px;
+  }
+}
+

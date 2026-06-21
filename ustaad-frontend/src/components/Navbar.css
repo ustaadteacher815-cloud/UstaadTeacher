@@ -1,0 +1,24 @@
+.navbar-brand-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-brand-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+a:hover .navbar-brand-icon,
+a:focus-visible .navbar-brand-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+@media (max-width: 576px) {
+  .navbar-brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
